@@ -1,15 +1,15 @@
 /********************************************
-Project Name:CUSTOMER BILLING SYSTEM
+Project Name : CUSTOMER BILLING SYSTEM
 Author: ManoVishnu A
         Mandala Saikushal
         Sai Chaitanya Kathri
 Source filename:billing.c
 Date: 18th-Nov-2017.
 *********************************************/
-#include<stdio.h>
-#include<string.h>
-#include<ctype.h>
-#include<conio.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <conio.h>
 
 struct item
 {
@@ -19,6 +19,7 @@ struct item
 	int price;
 }
 item;
+
 struct customer
 {
 	int productno;
@@ -28,6 +29,7 @@ struct customer
 	int amount;
 }
 cst[100];
+
 struct temporary
 {
 	int productno;
@@ -36,12 +38,14 @@ struct temporary
 	int price;
 	int amount;
 }
+
 cstr[100];
 int t=0;
 int n=0; //used in Quantity and Records.txt
 int k=0;
 int ba=0;
 int ti=0;
+
 void create()
 {
 	int i=0;
@@ -52,7 +56,7 @@ void create()
 		printf("Error\n");
 	}
 	printf("\t");
-	printf("Enter the Number of Records:");
+	printf("Enter the Number of Records : ");
 	scanf("%d",&n);
 	printf("\n");
 	FILE *fpq;
@@ -63,16 +67,16 @@ void create()
 	while(i<n)
 	{
 	    printf("\t");
-		printf("Enter Product Code:");
+		printf("Enter Product Code : ");
 		scanf("%d",&item.productno);
 		printf("\t");
-		printf("Enter Product Name:");
+		printf("Enter Product Name : ");
 		scanf("%s",item.productname);
 		printf("\t");
-		printf("Enter Quantity:");
+		printf("Enter Quantity : ");
 		scanf("%d",&item.quantity);
 		printf("\t");
-		printf("Enter Price:");
+		printf("Enter Price : ");
 		scanf("%d",&item.price);
 		printf("\n");
 		i++;
@@ -97,7 +101,7 @@ void bill()
 	int bi=0;
 	int ln=0;
     printf("\t");
-	l3 : printf("Enter the Product Number:");
+	l3 : printf("Enter the Product Number : ");
 	scanf("%d",&na);
 	printf("\n");
 	FILE *fp;
@@ -116,7 +120,7 @@ void bill()
 			ln++;
 			if(ln==2)
 			break;
-			printf("Enter the Quantity:");
+			printf("Enter the Quantity : ");
 			scanf("%d",&a);
 			if(a <= item.quantity)
 			{
@@ -156,7 +160,7 @@ void bill()
 	remove("Records.txt");
 	rename("temp.txt","Records.txt");
 	ln=0;
-	printf("Do you Want to Shop More:\nPress 1 for More\nPress 2 to Exit");
+	printf("Do you Want to Shop More : \nPress 1 for More\nPress 2 to Exit");
 	scanf("%d",&k);
 	if(k==1)
 	goto l3;
@@ -295,7 +299,7 @@ void mdelete()
 	FILE *fw;
 	FILE *fq;
 	printf("\t");
-	printf("Enter the Product Number to be Deleted:");
+	printf("Enter the Product Number to be Deleted : ");
 	scanf("%d",&f);
 	printf("\n");
 	for(i=0;i<ti;i++)
@@ -399,7 +403,7 @@ int main()
 	printf("03. EXIT");
 	printf("\n");
 	printf("\n\t");
-	printf("Please Enter an Option: ");
+	printf("Please Enter an Option : ");
 	scanf("%d",&s);
 
 	switch(s)
@@ -416,7 +420,7 @@ int main()
               if(strcmp(password,q))
               {
                   printf("\n\t");
-              printf("Wrong Password Please Try Again");
+              printf("Wrong Password Please Try Again ");
               printf("\n\n");
               goto q;
              }
@@ -465,7 +469,7 @@ int main()
                printf("****************************");
                printf("\n");
                printf("\t");
-               printf("Plese Select an Option: ");
+               printf("Plese Select an Option : ");
                printf("\n");
                printf("\t");
                printf("****************************");
@@ -483,7 +487,7 @@ int main()
                printf("\n\t");
                printf("06.DELETE ITEMS IN CART\n");
                printf("\n\t");
-               printf("Please Enter an Option: ");
+               printf("Please Enter an Option : ");
                scanf("%d",&y);
                printf("\n");
                switch(y)
